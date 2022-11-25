@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/none.css">
+</head>
+<body>
+    <section class="section">
+        <div class="clock">
+            <div class="container">
+                <h2 id="hour">00</h2>
+                <h2 class="dot">:</h2>
+                <h2 id="min">00</h2>
+                <h2 class="dot">:</h2>
+                <h2 id="sec">00</h2>
+            </div>
+        </div>
+    </section>
+    <script>
+        function clock(){
+            let hour = document.getElementById('hour');
+            let min = document.getElementById('min');
+            let sec = document.getElementById('sec');
+
+            let h = new Date().getHours();
+            let m = new Date().getMinutes();
+            let s = new Date().getSeconds();
+
+            h = (h < 10 ) ? '0' + h : h;
+            m = (m < 10 ) ? '0' + m : m;
+            s = (s < 10 ) ? '0' + s : s;
+
+            hour.innerHTML = h;
+            min.innerHTML = m;
+            sec.innerHTML = s;
+        }
+
+        var interval = setInterval(clock, 1000)
+    </script>
+</body>
+</html>
